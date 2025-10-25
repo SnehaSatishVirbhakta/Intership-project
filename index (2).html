@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body { scroll-behavior: smooth; }
+        .navbar { background: #333; }
+        .navbar a { color: white; }
+        .hero { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; color: white; background: #007BFF; }
+        .projects img { width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Showcasing my skills and projects</p>
+        </div>
+    </section>
+    
+    <section id="about" class="container py-5">
+        <h2>About Me</h2>
+        <p>My Name is sneha virbhakta,from sangli.I am a computer engineering student. I have experience with languages like Python and C++ and enjoy working on projects related to software development and data analysis. My interests include cloud computing, machine learning, and DevOps. I am always eager to learn new technologies and improve my skills to build efficient and innovative solutions.</p>
+    </section>
+    <section id="projects" class="container py-5">
+        <h2>Projects</h2>
+        <div class="row projects">
+            <div class="col-md-4">
+                <img src="1.jpg" alt="Project 1">
+                <p>The My College Buddy Project is a virtual assistant designed to help students with their academic and daily college activities. It provides study materials, class schedules, reminders, and a platform for doubt-solving. Students can also get career guidance, connect with peers, and stay updated on college events. The system can be developed as a mobile app, website, or chatbot using technologies like AI and cloud computing, making student life more organized and efficient.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="2.png" alt="Project 2">
+                <p>A My music library is a collection of songs that can be stored digitally or physically, allowing users to organize and access their favorite music easily. It can be personal, like a collection of downloaded songs, or online, like streaming services such as Spotify or Apple Music. A good music library lets users create playlists, search for songs, and organize music by artist, album, or genre. Since your project focuses on a music library website with playlists, it will likely allow users to add, manage, and play songs in custom playlists.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="3.jpg" alt="Project 3">
+                <p>A Smart Agriculture is a technology-driven platform that helps farmers improve productivity and efficiency by using real-time data and automation. It provides features like weather forecasting, soil monitoring, and crop health analysis using AI and IoT sensors. Farmers can receive smart irrigation suggestions, disease detection alerts, and market price trends to make better decisions. The website also includes farm management tools for tracking crops, finances, and schedules, along with an e-commerce section for buying and selling agricultural products. By integrating AI, cloud computing, and data analytics, a Smart Agriculture makes farming more efficient, sustainable, and profitable. </p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="container py-5">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" class="form-control" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
+    
+    <footer class="text-center py-3 bg-dark text-white">
+        <p>Follow me on <a href="#" class="text-white">LinkedIn</a> | <a href="#" class="text-white">GitHub</a></p>
+    </footer>
+    
+    <script>
+        $(document).ready(function() {
+            $('a.nav-link').click(function(event) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 500);
+            });
+            
+            $('#contactForm').submit(function(event) {
+                event.preventDefault();
+                let name = $('#name').val();
+                let email = $('#email').val();
+                let message = $('#message').val();
+                if (name && email && message) {
+                    alert('Form submitted successfully!');
+                } else {
+                    alert('Please fill out all fields.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
